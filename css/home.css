@@ -1,0 +1,19 @@
+ .btn                    { border-radius: 0px;
+                                position: absolute;
+                                font-size: inherit;
+                                color: #FFF;
+                                background: rgba(0, 0, 0, 0.4);
+                                padding: 1em 2em;
+                                border: 0.25px solid #FFF;
+                                letter-spacing: 1px;
+                                text-transform: uppercase;
+                                display: inline-block;
+                                text-align: center;
+                                cursor: pointer;
+                                -webkit-transition: color ease 0.3s;
+                                -moz-transition: all ease 0.3s;
+                                transition: all ease 0.3s; }
+      .btn:hover              { text-decoration: none;
+                                color: #111;
+                                background: #FFF;
+                                padding: 1em 2.5em; }
