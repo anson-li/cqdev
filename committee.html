@@ -11,13 +11,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/home.css" />
     <style>
-    body {
-      width: 100%;
-      overflow-x: hidden;
-      overflow-y: scroll;
-    }
     p {
       position: relative;
+      overflow-y: hidden;
     }
     </style>
     <script id="post-vert" type="x-shader/x-vertex">
@@ -73,9 +69,9 @@
       </div>
         <div class="dark-background"></div>
         <h1 class="white-font" style="top: 10%; left: 25%;">Committee Participation</h1>
-        <div id="com-first" class="box">
-          <div class="title-vert" style="position: absolute; top: 47%; left: 13%"><h2 class="white-font white-border" >CAPP<br>Crude Oil Committee</h2></div>
-          <div class="white-font descr-one">
+        <div id="com-first" class="box" style="cursor: ew-resize">
+          <div class="title-vert title-one first" style="position: absolute; top: 47%; left: 13%"><h2 class="white-font white-border" >CAPP<br>Crude Oil Committee</h2></div>
+          <div class="descr-one first">
             <p>
               Reporting to the Markets & Transportation Executive Policy Group, the Crude Oil Committee works primarily with regulated segments of the industry such as transportation, storage, and market access.
               <br><br>
@@ -87,9 +83,9 @@
             </p>
           </div>
         </div>
-        <div id="com-second" class="box" class="box" style="display:none">
-          <div class="title-vert" style="position: absolute; top: 47%; left: 12%"><h2 class="white-font white-border" >CAPP<br>Crude Oil Quality<br>Committee</h2></div>
-          <div class="white-font descr-two">
+        <div id="com-second" class="box" class="box" style="cursor: ew-resize">
+          <div class="title-vert title-two second" style="position: absolute; top: 47%; left: 150%; opacity: 0;"><h2 class="white-font white-border" >CAPP<br>Crude Oil Quality<br>Committee</h2></div>
+          <div class="descr-two second" style="opacity: 0; left: 150%">
             <p>
               Reporting to the Markets & Transportation Executive Policy Group through the Crude Oil Committee, The Crude Oil Quality Committee is focused on specific crude quality issues that impact the netback value of crude oil streams to their producers.
               <br><br>
@@ -101,9 +97,9 @@
             </p>
           </div>
         </div>
-        <div id="com-third" class="box" class="box" style="display:none">
-          <div class="title-vert" style="position: absolute; top: 47%; left: 12%"><h2 class="white-font white-border">COQA<br>Crude Oil<br>Subcommittee</h2></div>
-          <div class="white-font descr-three">
+        <div id="com-third" class="box" class="box" style="cursor: ew-resize">
+          <div class="title-vert title-three third" style="position: absolute; top: 47%; left: 150%; opacity: 0;"><h2 class="white-font white-border">COQA<br>Crude Oil<br>Subcommittee</h2></div>
+          <div class="descr-three third" style="opacity: 0; left: 150%">
             <p>
               Canadian crude oil is becoming ever more prevalent in the United States. This subcommittee discusses the issues that are inherent in refining and shipping these crudes.
               <br><br>
@@ -138,12 +134,57 @@
       $('.navg').click(function() {
         $('#nav-icon4').toggleClass('open');
       })
-      $('.descr-one').click(function() {
-        $(this).animate({
-          left: '-50%'
-        }, 2500);
-      })
-      
+      $('.first').click(function() {
+        $('.first').animate({
+          left: '-50%',
+          opacity: '0'
+        }, 800, function() {
+          $('.first').css("left", "110%");
+          $('.descr-one').css("left", "140%");
+        });
+        $('.title-two').animate({
+          opacity: '100',
+          left: '12%'
+        }, 800);
+        $('.descr-two').animate({
+          opacity: '100',
+          left: '40%'
+        }, 800);
+      });
+      $('.second').click(function() {
+        $('.second').animate({
+          left: '-50%',
+          opacity: '0'
+        }, 800, function() {
+          $('.second').css("left", "110%");
+          $('.descr-two').css("left", "140%");  
+        });
+        $('.title-three').animate({
+          opacity: '100',
+          left: '12%'
+        }, 800);
+        $('.descr-three').animate({
+          opacity: '100',
+          left: '40%'
+        }, 800);
+      });
+     $('.third').click(function() {
+        $('.third').animate({
+          left: '-50%',
+          opacity: '0'
+        }, 800, function() {
+          $('.third').css("left", "110%");
+          $('.descr-three').css("left", "140%");
+        });
+        $('.title-one').animate({
+          opacity: '100',
+          left: '12%'
+        }, 800);
+        $('.descr-one').animate({
+          opacity: '100',
+          left: '40%'
+        }, 800);
+      });
     });
     </script>
     <script type="text/javascript">
