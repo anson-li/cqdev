@@ -39,6 +39,7 @@
 
   </head>
   <body>
+    
     <div class="header">
       <canvas></canvas>
     </div>
@@ -50,26 +51,35 @@
     </div>
     <div id="barba-wrapper">
       <div class="barba-container">
-      <div class="menu" style="display: none">
-        <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" class="white-font navg" style="cursor: pointer; top: 35%; left: 45%;">Services</h2>
-          <h2 id="to_projects" class="white-font navg" style="cursor: pointer; top: 45%; left: 45%;">Projects</h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" class="white-font navg" style="cursor: pointer; top: 65%; left: 45%;">Links</h2>
-          <h2 id="to_contact" class="white-font navg" style="cursor: pointer; top: 75%; left: 45%;">Contact</h2>
+        <div class="menu" style="display: none">
+          <div class="menu-item" style="display: none">
+            <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
+            <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
+            <h2 id="to_services" class="white-font navg" style="cursor: pointer; top: 35%; left: 45%;">Services</h2>
+            <h2 id="to_projects" class="white-font navg" style="cursor: pointer; top: 45%; left: 45%;">Projects</h2>
+            <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg" href="committee.html">Committees</a></h2>
+            <h2 id="to_links" class="white-font navg" style="cursor: pointer; top: 65%; left: 45%;">Links</h2>
+            <h2 id="to_contact" class="white-font navg" style="cursor: pointer; top: 75%; left: 45%;">Contact</h2>
+          </div>
         </div>
-      </div>
-        <h1 class="white-font" style="top: 25%; left: 25%;">Crude Quality Inc.</h1>
-        <h2 class="white-font" style="top: 35%; left: 25%">Specializing in crude oil quality issues</h2>
-        <p class="white-font" style="width: 34%; top:42%; left: 25%">
-        Crude Quality Inc. was established to meet the communications demand between producers, shippers, and receivers of crude oil with respect to the quality of the crude oil product. Our commitment is to provide information that will elevate crude oil supplies from the status of a commodity to that of a definable and reliable raw material. We believe that maintaining the integrity and consistency of the refining characteristics of crude oil streams is of importance to all parties involved in crude oil activities, from production locations to refineries and to the end user of hydrocarbon products.</p>
-        <p class="blue-font" style="top: 59%; left: 25%">Our business is to produce, provide and maintain crude quality information<br>that increases the productivity of our customers and the petroleum industry.</p>
-        <a href="corporate.html" class="btn" style="top: 65%; left: 25%">Enter</a>
+        <h1 class="white-font" style="top: 25%; left: 25%;">About Us</h1>
+        <p class="white-font" style="width: 34%; top:38%; left: 25%">
+        Crude Quality Inc. is a private company incorporated in the Province of Alberta, Canada in 1998. CQI was established in recognition of existing and pending demands for high quality, "real time" crude quality information by the production, transportation and refining segments of the oil industry. The principals of CQI have spent the past ten years in the petroleum transportation and refining industries troubleshooting crude oil contamination issues throughout North America and overseas.
+        <br><br>
+        Crude Quality Inc. has formed a number of alliances with leaders in hydrocarbon analysis and information processing technology. CQI enjoys special status through all of these alliances, ensuring the most cost effective solutions for industry needs. Crude Quality Inc. is capable of delivering everything from routine analysis on hydrocarbon streams (Certificate of Analysis) to simulation modeling of pipeline transportation systems to detailed investigations into the ramifications of abnormal crude quality behaviour through complex refining scenarios.
+        <br><br>
+        Along with full access to the battery of ASTM testing procedures at our disposal, Crude Quality Inc. has considerable experience designing experiments and analytical procedures to meet specific needs of the petroleum industry. We have access to some of the most sophisticated and sensitive equipment in the world, along with the most highly trained and qualified individuals available.
+        <br><br>
+        Crude Quality Inc. is an active member in a number of associations and societies in Canada and the United States. Crude Quality Inc. has presented at technical and business meetings ranging from private board meetings to annual general meetings of hundreds.
+        </p>
       </div>
     </div>
+    
     <div id="info" class="container-fluid">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      </div>
       <br/>
       <div id="error" style="display: none;">
       Your browser does not support <strong>WEBGL_depth_texture</strong>.<br/><br/>
@@ -80,7 +90,7 @@
 		<script src="js/three.min.js"></script>
     <script src="js/shaders/SSAOShader.js"></script>
     <script src="js/controls/OrbitControls.js"></script>
-    <script type="text/javascript">
+   <script type="text/javascript">
     $(document).ready(function(){
       $('#nav-icon4').click(function(){
         $(this).toggleClass('open');
@@ -93,7 +103,7 @@
       })
     });
     </script>
-    <script type="text/javascript">
+  <script type="text/javascript">
     Barba.Pjax.start();
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
