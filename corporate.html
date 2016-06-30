@@ -53,17 +53,17 @@
       <div class="barba-container">
         <div class="menu" style="display: none">
           <div class="menu-item" style="display: none">
-            <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-            <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-            <h2 id="to_services" class="white-font navg" style="cursor: pointer; top: 35%; left: 45%;">Services</h2>
-            <h2 id="to_projects" class="white-font navg" style="cursor: pointer; top: 45%; left: 45%;">Projects</h2>
-            <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg" href="committee.html">Committees</a></h2>
-            <h2 id="to_links" class="white-font navg" style="cursor: pointer; top: 65%; left: 45%;">Links</h2>
-            <h2 id="to_contact" class="white-font navg" style="cursor: pointer; top: 75%; left: 45%;">Contact</h2>
+          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
+          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
+          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
+          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
+          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
+          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
+          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
           </div>
         </div>
         <h1 class="white-font" style="top: 25%; left: 25%;">About Us</h1>
-        <p class="white-font" style="width: 34%; top:38%; left: 25%">
+        <p class="white-font" style="width: 34%; top:38%; left: 25%; position: absolute">
         Crude Quality Inc. is a private company incorporated in the Province of Alberta, Canada in 1998. CQI was established in recognition of existing and pending demands for high quality, "real time" crude quality information by the production, transportation and refining segments of the oil industry. The principals of CQI have spent the past ten years in the petroleum transportation and refining industries troubleshooting crude oil contamination issues throughout North America and overseas.
         <br><br>
         Crude Quality Inc. has formed a number of alliances with leaders in hydrocarbon analysis and information processing technology. CQI enjoys special status through all of these alliances, ensuring the most cost effective solutions for industry needs. Crude Quality Inc. is capable of delivering everything from routine analysis on hydrocarbon streams (Certificate of Analysis) to simulation modeling of pipeline transportation systems to detailed investigations into the ramifications of abnormal crude quality behaviour through complex refining scenarios.
@@ -99,13 +99,16 @@
         });
       });
       $('.navg').click(function() {
-        $('#nav-icon4').toggleClass('open');
+        //$('#nav-icon4').toggleClass('open');
       })
     });
     </script>
   <script type="text/javascript">
     Barba.Pjax.start();
     var BaseTransition = Barba.BaseTransition;
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+      $('#nav-icon4').removeClass('open');
+    });
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {
         /**
@@ -169,91 +172,8 @@
       return FadeTransition;
     };
     </script>
-    <script>
-      var camera, scene, renderer, controls, mesh;
-      var target;
-      var postScene, postCamera;
-      var supportsExtension = true;
-      init();
-      animate();
-      function init() {
-        var canvas = document.querySelector('canvas');
-        var gl;
-        try {
-          gl = canvas.getContext('webgl2');
-        } catch (err) {
-          console.error(err);
-        }
-        var isWebGL2 = Boolean(gl);
-        renderer = new THREE.WebGLRenderer( {
-          canvas: canvas,
-          context: gl
-        } );
-        if ( !renderer.extensions.get('WEBGL_depth_texture') ) {
-          supportsExtension = false;
-          document.querySelector('#error').style.display = 'block';
-          return;
-        }
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.setClearColor( 0x101010, 1);
-
-        //
-        camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.01, 40 );
-        camera.position.z = 0;
-        camera.position.x += 10;
-        camera.position.y += 41;
-        controls = new THREE.OrbitControls( camera, renderer.domElement );
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.rotateSpeed = 0.35;
-        controls.enabled = false;
-        // Our scene
-        scene = new THREE.Scene();
-        setupScene();
-        onWindowResize();
-        window.addEventListener( 'resize', onWindowResize, false );
-      }
-      function setupScene () {
-        var diffuse = new THREE.TextureLoader().load('js/textures/brick_diffuse.jpg');
-        diffuse.wrapS = diffuse.wrapT = THREE.RepeatWrapping;
-        // Setup some geometries
-        loader = new THREE.JSONLoader();
-        var material = new THREE.MeshPhongMaterial( { wireframe: true, color: 0xffffff} );
-        loader.load( "assets/drop.js", function( geometry ) {
-		        mesh = new THREE.Mesh( geometry, material);
-		        mesh.scale.set( 10, 10, 10 );
-		        mesh.position.y = 0;
-		        mesh.position.x = 0;
-		        scene.add(mesh);
-            mesh.rotation.set(0, Math.PI * 2, 0); // Set initial rotation
-            //mesh.matrix.setRotationFromEuler(mesh.rotation); // Apply rotation to the object's matrix
-		    } );
-        var light = new THREE.PointLight( 0x999999 );
-        light.position.set( 10, 10, 10 );
-        scene.add( light );
-
-      }
-      function onWindowResize() {
-        var aspect = window.innerWidth / window.innerHeight;
-        camera.aspect = aspect;
-        camera.updateProjectionMatrix();
-        var dpr = renderer.getPixelRatio();
-        //target.setSize( window.innerWidth * dpr, window.innerHeight * dpr );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-      }
-      function animate() {
-        if ( !supportsExtension ) return;
-        requestAnimationFrame( animate );
-        for ( var i = 0; i < scene.children.length; i ++ ) {
-          var object = scene.children[ i ];
-          object.rotation.x += 0.00;
-          object.rotation.y += 0.0005;
-        }
-        controls.update();
-        renderer.render( scene, camera, target );
-      }
-    </script>
-
+     <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
+    <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="js/three-cqi.js"></script>
   </body>
 </html>

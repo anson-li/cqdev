@@ -54,19 +54,21 @@
         <div class="menu-item" style="display: none">
           <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
           <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" class="white-font navg" style="cursor: pointer; top: 35%; left: 45%;">Services</h2>
-          <h2 id="to_projects" class="white-font navg" style="cursor: pointer; top: 45%; left: 45%;">Projects</h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" class="white-font navg" style="cursor: pointer; top: 65%; left: 45%;">Links</h2>
-          <h2 id="to_contact" class="white-font navg" style="cursor: pointer; top: 75%; left: 45%;">Contact</h2>
+          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
+          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
+          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
+          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
+          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
         </div>
       </div>
         <h1 class="white-font" style="top: 25%; left: 25%;">Crude Quality Inc.</h1>
         <h2 class="white-font" style="top: 35%; left: 25%">Specializing in crude oil quality issues</h2>
-        <p class="white-font" style="width: 34%; top:42%; left: 25%">
+        <p class="white-font" style="width: 34%; top:42%; left: 25%; position: absolute">
         Crude Quality Inc. was established to meet the communications demand between producers, shippers, and receivers of crude oil with respect to the quality of the crude oil product. Our commitment is to provide information that will elevate crude oil supplies from the status of a commodity to that of a definable and reliable raw material. We believe that maintaining the integrity and consistency of the refining characteristics of crude oil streams is of importance to all parties involved in crude oil activities, from production locations to refineries and to the end user of hydrocarbon products.</p>
-        <p class="blue-font" style="top: 59%; left: 25%">Our business is to produce, provide and maintain crude quality information<br>that increases the productivity of our customers and the petroleum industry.</p>
-        <a href="corporate.html" class="btn" style="top: 65%; left: 25%">Enter</a>
+        <p class="blue-font" style="top: 59%; left: 25%; position: absolute">Our business is to produce, provide and maintain crude quality information<br>that increases the productivity of our customers and the petroleum industry.</p>
+        <a href="corporate.html" class="btn" style="top: 67%; left: 25%">Who we are</a>
+        <a href="services.html" class="btn no-barba" style="top: 67%; left: 35%">What We Do</a>
+        <a href="contact.html" class="btn" style="top: 67%; left: 45%">Contact Us</a>
       </div>
     </div>
     <div id="info" class="container-fluid">
@@ -89,12 +91,15 @@
         });
       });
       $('.navg').click(function() {
-        $('#nav-icon4').toggleClass('open');
+        //$('#nav-icon4').toggleClass('open');
       })
     });
     </script>
     <script type="text/javascript">
     Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+      $('#nav-icon4').removeClass('open');
+    });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {
@@ -159,91 +164,8 @@
       return FadeTransition;
     };
     </script>
-    <script>
-      var camera, scene, renderer, controls, mesh;
-      var target;
-      var postScene, postCamera;
-      var supportsExtension = true;
-      init();
-      animate();
-      function init() {
-        var canvas = document.querySelector('canvas');
-        var gl;
-        try {
-          gl = canvas.getContext('webgl2');
-        } catch (err) {
-          console.error(err);
-        }
-        var isWebGL2 = Boolean(gl);
-        renderer = new THREE.WebGLRenderer( {
-          canvas: canvas,
-          context: gl
-        } );
-        if ( !renderer.extensions.get('WEBGL_depth_texture') ) {
-          supportsExtension = false;
-          document.querySelector('#error').style.display = 'block';
-          return;
-        }
-        renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.setClearColor( 0x101010, 1);
-
-        //
-        camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.01, 40 );
-        camera.position.z = 0;
-        camera.position.x += 10;
-        camera.position.y += 41;
-        controls = new THREE.OrbitControls( camera, renderer.domElement );
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.rotateSpeed = 0.35;
-        controls.enabled = false;
-        // Our scene
-        scene = new THREE.Scene();
-        setupScene();
-        onWindowResize();
-        window.addEventListener( 'resize', onWindowResize, false );
-      }
-      function setupScene () {
-        var diffuse = new THREE.TextureLoader().load('js/textures/brick_diffuse.jpg');
-        diffuse.wrapS = diffuse.wrapT = THREE.RepeatWrapping;
-        // Setup some geometries
-        loader = new THREE.JSONLoader();
-        var material = new THREE.MeshPhongMaterial( { wireframe: true, color: 0xffffff} );
-        loader.load( "assets/drop.js", function( geometry ) {
-		        mesh = new THREE.Mesh( geometry, material);
-		        mesh.scale.set( 10, 10, 10 );
-		        mesh.position.y = 0;
-		        mesh.position.x = 0;
-		        scene.add(mesh);
-            mesh.rotation.set(0, Math.PI * 2, 0); // Set initial rotation
-            //mesh.matrix.setRotationFromEuler(mesh.rotation); // Apply rotation to the object's matrix
-		    } );
-        var light = new THREE.PointLight( 0x999999 );
-        light.position.set( 10, 10, 10 );
-        scene.add( light );
-
-      }
-      function onWindowResize() {
-        var aspect = window.innerWidth / window.innerHeight;
-        camera.aspect = aspect;
-        camera.updateProjectionMatrix();
-        var dpr = renderer.getPixelRatio();
-        //target.setSize( window.innerWidth * dpr, window.innerHeight * dpr );
-        renderer.setSize( window.innerWidth, window.innerHeight );
-      }
-      function animate() {
-        if ( !supportsExtension ) return;
-        requestAnimationFrame( animate );
-        for ( var i = 0; i < scene.children.length; i ++ ) {
-          var object = scene.children[ i ];
-          object.rotation.x += 0.00;
-          object.rotation.y += 0.0005;
-        }
-        controls.update();
-        renderer.render( scene, camera, target );
-      }
-    </script>
-
+    <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
+    <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="js/three-cqi.js"></script>
   </body>
 </html>
