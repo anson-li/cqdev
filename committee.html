@@ -9,6 +9,8 @@
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="css/flexboxgrid.min.css" />
+
     <link rel="stylesheet" href="css/home.css" />
     <style>
     p {
@@ -58,21 +60,24 @@
       <div class="barba-container">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
           </div>
       </div>
         <!--<div class="dark-background"></div>-->
-        <h1 class="white-font" style="top: 10%; left: 21%;">Committee Participation</h1>
-        <div class="slick" style="position: fixed; top: 25%; left: 0%; width: 100vw">
-        <div id="com-first" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">CAPP<br>Crude Oil Committee</h3></div>
-          <div class="descr-one first" style="margin-left: 10%; margin-top: 30px">
+        <div class="container-fluid">
+          <div class="container padded-top">
+           <h1 class="white-font">Committee Participation</h1>
+          </div>
+        <div class="slick" style="width: 100vw">
+        <div id="com-first" style="cursor: ew-resize">
+          <div class="title-vert title-one"><h3 class="white-font white-border black-title">CAPP<br>Crude Oil Committee</h3></div>
+          <div class="descr-one descr blue-bg">
             <p>
               Reporting to the Markets & Transportation Executive Policy Group, the Crude Oil Committee works primarily with regulated segments of the industry such as transportation, storage, and market access.
               <br><br>
@@ -84,9 +89,9 @@
             </p>
           </div>
         </div>
-        <div id="com-second" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-two second"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">CAPP<br>Crude Oil Quality<br>Committee</h3></div>
-          <div class="descr-two second" style="margin-left: 10%; margin-top: 30px">
+        <div id="com-second" style="cursor: ew-resize">
+          <div class="title-vert title-two"><h3 class="white-font white-border black-title">CAPP<br>Crude Oil Quality<br>Committee</h3></div>
+          <div class="descr-two descr blue-bg">
             <p>
               Reporting to the Markets & Transportation Executive Policy Group through the Crude Oil Committee, The Crude Oil Quality Committee is focused on specific crude quality issues that impact the netback value of crude oil streams to their producers.
               <br><br>
@@ -98,9 +103,9 @@
             </p>
           </div>
         </div>
-        <div id="com-third" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-three third"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">COQA<br>Crude Oil<br>Subcommittee</h3></div>
-          <div class="descr-three third" style="margin-left: 10%; margin-top: 0.5%; padding-bottom: 100px">
+        <div id="com-third" style="cursor: ew-resize">
+          <div class="title-vert title-three"><h3 class="white-font white-border black-title">COQA<br>Crude Oil<br>Subcommittee</h3></div>
+          <div class="descr-three descr blue-bg">
             <p>
               Canadian crude oil is becoming ever more prevalent in the United States. This subcommittee discusses the issues that are inherent in refining and shipping these crudes.
               <br><br>
@@ -109,12 +114,15 @@
               ‣&nbsp;&nbsp;TAN levels and distributions throughout yield curve<br>
               ‣&nbsp;&nbsp;secondary properties such as asphalt and coking are rarely available<br>
               ‣&nbsp;&nbsp;synthetics, synthetic-bitumen blends
+              <br><br>
+              <br><br>
             </p>
           </div>
         </div>
         </div>
-        <div class="arrows" style="position: fixed; top: 81%; left: 45%; width: 100px">
+        <div class="arrows" style="position: fixed; top: 90%; left: 45%; width: 100px">
         </div>
+      </div>
       </div>
     </div>
     <div id="info" class="container-fluid">
@@ -138,13 +146,6 @@
     }
     </style>
     <script src="assets/slick/slick.min.js"></script>
-    <script>
-     $('.slick').slick({
-      arrows: false,
-      dots: true,
-      appendDots: $('.arrows')
-     });
-    </script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#nav-icon4').click(function(){
@@ -158,8 +159,23 @@
       })
     });
     </script>
+    <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+     });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {

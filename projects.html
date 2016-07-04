@@ -9,6 +9,7 @@
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" />
     <link rel="stylesheet" href="css/home.css" />
     <style>
     p {
@@ -58,21 +59,23 @@
       <div class="barba-container">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
         </div>
       </div>
-        <!--<div class="dark-background"></div>-->
-        <h1 class="white-font" style="top: 10%; left: 21%;">Projects</h1>
-        <div class="slick" style="position: fixed; top: 25%; left: 0%; width: 100vw">
+      <div class="container-fluid padded-top">
+        <div class="container">
+          <h1 class="white-font">Projects</h1>
+        </div>
+        <div class="slick" style="width: 100vw">
         <div id="com-first" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Western Canadian<br>Crude Quality<br>Monitoring Programs</h3></div>
-          <div class="descr-one first" style="margin-left: 8%; margin-top: 30px">
+          <div class="title-vert title-one first"><h3 class="white-font white-border black-title">Western Canadian Crude Quality Monitoring Programs</h3></div>
+          <div class="blue-bg descr-one descr">
             <p>
             Crude Quality Inc. has been supplying management and facilities for the Crude Quality Monitoring Programs supported by western Canadian producer community, facilitated by the Canadian Association of Petroleum Producers. Detailed monthly data on samples of all Western Canadian heavy crude streams are available at <a href="www.crudemonitor.ca">www.crudemonitor.ca</a>. The data can be accessed as individual batch reports, or as standard analyses, light ends, or simulated distillation summaries, for all crudes and all recent dates. All files can easily be downloaded in .pdf or .xls format.
             <br><br>
@@ -81,8 +84,8 @@
           </div>
         </div>
         <div id="com-second" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-two second"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">MidStream<br>Quality Testing</h3></div>
-          <div class="descr-two second" style="margin-left: 8%; margin-top: 30px">
+          <div class="title-vert title-two second"><h3 class="white-font white-border black-title">Midstream Quality Testing</h3></div>
+          <div class="blue-bg descr-two descr">
             <p>
               Crude Quality Inc. has been actively supporting initiatives on the part of the Canadian pipeline companies to harmonize the quality of as-received and as-delivered crude product quality. Proper communication of the quality criteria among all parties involved in the transaction of a commodity crude oil delivery (seller, buyer, carrier) has proven to be essential to the success of improved quality management. 
               <br><br>
@@ -91,23 +94,24 @@
           </div>
         </div>
         <div id="com-third" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-three third"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">DownStream<br>Quality Testing</h3></div>
-          <div class="descr-three third" style="margin-left: 8%; margin-top: 0.5%">
+          <div class="title-vert title-three third"><h3 class="white-font white-border black-title">Downstream Quality Testing</h3></div>
+          <div class="blue-bg descr-three descr">
             <p>
             A significant database of crude quality parameters, as produced, has been developed and is used extensively by every aspect of the oil industry. It has been suggested that the next step in the monitoring program could include collection of data on the "as received" side, for direct comparison with the upstream data.
             <br><br>
             Crude Quality Inc. is working with industry partners, at both corporate and association levels, to assist in the development of a downstream quality database that will provide financial incentives for consistency and ratability.
-            <br><br>
+            <br><br><br><br>
             </p>
           </div>
         </div>
         <div id="com-fourth" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-four fourth"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Committee<br>Participation</h3></div>
-          <div class="descr-three fourth" style="margin-left: 8%; margin-top: 0.5%; padding-bottom: 100px">
+          <div class="title-vert title-four fourth"><h3 class="white-font white-border black-title">Committee Participation</h3></div>
+          <div class="blue-bg descr-three descr">
             <p>
             Crude Quality Inc. has made a number of voluntary commitments to active participation on industry committees in both Canada and the United States. 
             <br><br>
             Along with our experience base and exposure to crude quality issues in a wide variety of forums, CQI offers a "non-vested" perspective (don't own any oil, never will!!) that has assisted in the building of industry level solutions to crude quality challenges.
+            <br><br><br><br><br><br>
             </p>
           </div>
         </div>
@@ -128,22 +132,7 @@
     <script src="js/controls/OrbitControls.js"></script>
     <link href="assets/slick/slick.css" rel="stylesheet">
     <link href="assets/slick/slick-theme.css" rel="stylesheet">
-    <style>
-    .slick-list-draggable {
-      height: 800px;
-    }
-    .slick-track {
-      height: 500px;
-    }
-    </style>
     <script src="assets/slick/slick.min.js"></script>
-    <script>
-     $('.slick').slick({
-      arrows: false,
-      dots: true,
-      appendDots: $('.arrows')
-     });
-    </script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#nav-icon4').click(function(){
@@ -157,8 +146,23 @@
       })
     });
     </script>
+   <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+    });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {

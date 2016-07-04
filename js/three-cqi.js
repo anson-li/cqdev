@@ -20,8 +20,8 @@
         container = document.createElement('div');
         document.body.appendChild(container);
 
-        camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 1, 10000 );
-        camera.position.z = 200;
+        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 150;
 
         scene = new THREE.Scene();
 
@@ -55,8 +55,8 @@
           particle.position.y = Math.random() * 2 - 1;
           particle.position.z = Math.random() * 2 - 1;
           particle.position.normalize();
-          particle.position.multiplyScalar( Math.random() * 10 + 450 );
-          particle.scale.x = particle.scale.y = Math.random() * 5;
+          particle.position.multiplyScalar( Math.random() * 12 + 450 );
+          particle.scale.x = particle.scale.y = Math.random() * 3;
           scene.add( particle );
 
           geometry.vertices.push( particle.position );
@@ -121,6 +121,9 @@
           mouseX = event.touches[ 0 ].pageX - windowHalfX;
           mouseY = event.touches[ 0 ].pageY - windowHalfY;
 
+        } else {
+          mouseX += 0.005;
+          mouseY -= 0.005;
         }
 
       }
@@ -137,9 +140,9 @@
 
       function render() {
 
-        camera.position.x += ( mouseX - camera.position.x ) * .002;
-        camera.position.y += ( - mouseY + 200 - camera.position.y ) * .002;
-        camera.lookAt( scene.position );
+        camera.position.x += ( mouseX - camera.position.x ) * .0005;
+        camera.position.y += ( - mouseY + 200 - camera.position.y ) * .0005;
+        camera.lookAt( scene.position ); 
 
         renderer.render( scene, camera );
 

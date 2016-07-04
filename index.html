@@ -36,54 +36,73 @@
         gl_FragColor.a = 1.0;
       }
     </script>
-
+  <link rel="stylesheet" href="css/flexboxgrid.min.css" />
   </head>
   <body>
     <div class="header">
       <canvas></canvas>
     </div>
-    <a href="index.html"><img height="50px" style="top: 20px; left: 20px;" src="assets/logo_white.png"></a>
+    <a href="index.html"><img height="50px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo_white.png"></a>
     <div id="nav-icon4">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div id="barba-wrapper">
-      <div class="barba-container">
+    <div id="barba-wrapper" style="height: 100%; width: 100%">
+      <div class="barba-container" style="height: 100%; width: 100%">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
         </div>
       </div>
-        <h1 class="white-font" style="top: 25%; left: 25%;">Crude Quality Inc.</h1>
-        <h2 class="white-font" style="top: 35%; left: 25%">Specializing in crude oil quality issues</h2>
-        <p class="white-font" style="width: 34%; top:42%; left: 25%; position: absolute">
+      <div class="flex-container container padded-top-2x">
+        <h1 class="white-font item no-padding">Crude Quality Inc.</h1>
+        <h2 class="white-font item">Specializing in crude oil quality issues</h2>
+        <p class="white-font item">
         Crude Quality Inc. was established to meet the communications demand between producers, shippers, and receivers of crude oil with respect to the quality of the crude oil product. Our commitment is to provide information that will elevate crude oil supplies from the status of a commodity to that of a definable and reliable raw material. We believe that maintaining the integrity and consistency of the refining characteristics of crude oil streams is of importance to all parties involved in crude oil activities, from production locations to refineries and to the end user of hydrocarbon products.</p>
-        <p class="blue-font" style="top: 59%; left: 25%; position: absolute">Our business is to produce, provide and maintain crude quality information<br>that increases the productivity of our customers and the petroleum industry.</p>
-        <a href="corporate.html" class="btn" style="top: 67%; left: 25%">Who we are</a>
-        <a href="services.html" class="btn no-barba" style="top: 67%; left: 35%">What We Do</a>
-        <a href="contact.html" class="btn" style="top: 67%; left: 45%">Contact Us</a>
+        <p class="blue-font item">Our business is to produce, provide and maintain crude quality information that increases the productivity of our customers and the petroleum industry.<br><br>
+        <a href="corporate.html" class="btn item">Who we are</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="services.html" class="btn item">What We Do</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="contact.html" class="btn item">Contact Us</a>
+        </p>
+        </div>
       </div>
     </div>
     <div id="info" class="container-fluid">
       <br/>
       <div id="error" style="display: none;">
-      Your browser does not support <strong>WEBGL_depth_texture</strong>.<br/><br/>
-      This demo will not work.
+      Your browser does not support <strong>WEBGL technology.</strong>.<br/><br/>
+      Please try again with a modern browser.
       </div>
     </div>
-
+    <link href="assets/slick/slick.css" rel="stylesheet">
+    <link href="assets/slick/slick-theme.css" rel="stylesheet">
+    <script src="assets/slick/slick.min.js"></script>
 		<script src="js/three.min.js"></script>
     <script src="js/shaders/SSAOShader.js"></script>
     <script src="js/controls/OrbitControls.js"></script>
     <script type="text/javascript">
+    THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+        console.log( item, loaded, total );
+    };
+    </script>
+    <script type="text/javascript">
     $(document).ready(function(){
+      $("#id-light").hover(function(){
+          $(this).attr("src", function(index, attr){
+              return attr.replace(".png", "-dark.png");
+          });
+      }, function(){
+          $(this).attr("src", function(index, attr){
+              return attr.replace("-dark.png", ".png");
+          });
+      });
       $('#nav-icon4').click(function(){
         $(this).toggleClass('open');
         $('.menu').fadeToggle('fast', function() {
@@ -95,11 +114,24 @@
       })
     });
     </script>
+    <script src="assets/slick/slick.min.js"></script>
+    <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+     });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
-      $('#nav-icon4').removeClass('open');
-    });
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {

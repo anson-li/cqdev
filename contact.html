@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" />
     <script id="post-vert" type="x-shader/x-vertex">
       varying vec2 vUv;
       void main() {
@@ -52,16 +53,18 @@
       <div class="barba-container">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>        </div>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>    
+        </div>
       </div>
-        <h1 class="white-font" style="top: 25%; left: 25%;">Contact Us</h1>
-        <p class="white-font" style="width: 34%; top:38%; left: 25%; position: absolute">
+      <div class="container padded-top-2x">
+        <h1 class="white-font">Contact Us</h1>
+        <p class="white-font">
         Find us at:
         <br><br>
         Crude Quality Inc.<br>
@@ -70,6 +73,7 @@
         CANADA T5S 2H5<br>
         +1 780 757 9909<br><br>
         crudequality@gmail.com<br>
+      </div>
       </div>
     </div>
     <div id="info" class="container-fluid">
@@ -96,11 +100,23 @@
       })
     });
     </script>
+    <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+     });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
-      $('#nav-icon4').removeClass('open');
-    });
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {

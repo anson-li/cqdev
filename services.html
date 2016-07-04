@@ -9,13 +9,8 @@
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" />
     <link rel="stylesheet" href="css/home.css" />
-    <style>
-    p {
-      position: relative;
-      overflow-y: hidden;
-    }
-    </style>
     <script id="post-vert" type="x-shader/x-vertex">
       varying vec2 vUv;
       void main() {
@@ -58,21 +53,24 @@
       <div class="barba-container">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
         </div>
       </div>
         <!--<div class="dark-background"></div>-->
-        <h1 class="white-font" style="top: 10%; left: 21%;">Services</h1>
-        <div class="slick" style="position: fixed; top: 23%; left: 0%; width: 100vw">
-        <div id="com-first" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Consulting<br>Services</h3></div>
-          <div class="descr-one first" style="margin-left: 7%; margin-top: 30px">
+      <div class="container-fluid">
+        <div class="container padded-top">
+          <h1 class="white-font">Services</h1>
+        </div>
+        <div class="slick" style="width: 100vw">
+        <div id="com-first" style="cursor: ew-resize">
+          <div class="title-vert title-one"><h3 class="white-font white-border black-title">Consulting<br>Services</h3></div>
+          <div class="descr-one blue-bg descr">
             <p>
             Crude Quality Inc. is available to provide contracted consulting services in the areas of crude quality monitoring, testing protocols and procedures for crude quality, and specialty analytical services related to crude oil and refined products quality. Should you have a concern related to crude oil quality, chances are high that we can help, or put you in contact with someone who could better assist you.
             <br><br>
@@ -82,23 +80,33 @@
             </p>
           </div>
         </div>
-        <div id="com-second" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-two second"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Expert<br>Witness</h3></div>
-          <div class="descr-two second" style="margin-left: 7%; margin-top: 30px">
+        <div id="com-second" style="cursor: ew-resize">
+          <div class="title-vert title-two"><h3 class="white-font white-border black-title">Expert<br>Witness</h3></div>
+          <div class="descr-two blue-bg descr">
             <p>
               Crude Quality Inc has appeared before utility commissions and arbitration panels to provide expert testimony with respect to crude quality related matters.
               <br><br>
               We are well respected in the Canadian crude oil marketing community, and our research, technical services and opinions have provided enlightened insight into a variety of legal arguments.
-              <br><br><br><br>
+              <br><br><br><br><br><br>
             </p>
           </div>
         </div>
-        <div id="com-third" class="box" class="box" style="cursor: ew-resize; height: 800px">
-          <div class="title-vert title-three third"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Contaminant<br>Testing</h3></div>
-          <div class="descr-three black-lined" style="margin-left: 7%;">
-          <h2 style="margin-top: -10px; padding-bottom: 15px;"> Past Projects </h2>
+        <div id="com-third" style="cursor: ew-resize">
+          <div class="title-vert title-three"><h3 class="white-font white-border black-title">Contaminant<br>Testing</h3></div>
+           <div id="toggle-id" class="descr-three descr blue-bg" >
             <p>
-            <br><br><br>
+            In general, contaminants are materials that are inadvertently, or deliberately, added to crude oil supplies. They are usually added to crude supplies for beneficial reasons (eg corrosion inhibitors, organic chlorides, deicing or hydrate prevention, dispersants in pipelines, ...). Unfortunately, these additives can have negative effects on downstream processes.
+            <br><br>
+            Contaminants can create havoc in the refining of crude oil. They have been known to interfere with the processing of crude oil by disrupting desalting, poisoning catalysts, fouling treater systems, etc. They can also interfere with the certification testing of the finished products. Determining of the presence of a contaminant usually requires the application of highly specialized techniques to specific circumstances.
+            <br><br>
+            If you require contamination testing, we recommend that you contact us directly by phone, fax or by e-mail.
+            </p>
+            <!--<h2 id="past-projects-on" style="cursor: pointer; color: #333; font-weight: 900; margin-left: 390px;">→</h2>-->
+          </div>
+          <div class="descr-three descr black-lined" style="display:none">
+          <h2> Past Projects </h2>
+            <p>
+            <br>
             ‣ Sulphur Speciation and Mass Balancing in Whole Crude and Refined Intermediate Streams<br>
             ‣ Lubricity Additive Tailback during Pipeline Transportation<br>
             ‣ Identification of Polar Contaminants in Finished Products<br>
@@ -109,37 +117,28 @@
             ‣ Development and Application of Probe MicroDistillation Mass Spectrometry<br>
             ‣ Identification, Tracking, Mass Balancing Corrosion Products, Drilling Muds, and Other Solids in Pipeline and Refinery Systems<br>
             </p>
-            <h2 id="past-projects-off" style="cursor: pointer; font-weight: 900; margin-left: 390px; bottom: 4px">×</h2>
+            <h2 id="past-projects-off" style="cursor: pointer; font-weight: 900; margin-left: 390px;">×</h2>
           </div>
-          <div id="toggle-id" class="descr-three third third-init" style="margin-left: 7%; height: 511px">
-            <p>
-            In general, contaminants are materials that are inadvertently, or deliberately, added to crude oil supplies. They are usually added to crude supplies for beneficial reasons (eg corrosion inhibitors, organic chlorides, deicing or hydrate prevention, dispersants in pipelines, ...). Unfortunately, these additives can have negative effects on downstream processes.
-            <br><br>
-            Contaminants can create havoc in the refining of crude oil. They have been known to interfere with the processing of crude oil by disrupting desalting, poisoning catalysts, fouling treater systems, etc. They can also interfere with the certification testing of the finished products. Determining of the presence of a contaminant usually requires the application of highly specialized techniques to specific circumstances.
-            <br><br>
-            If you require contamination testing, we recommend that you contact us directly by phone, fax or by e-mail.
-            </p>
-            <h2 id="past-projects-on" style="cursor: pointer; color: #333; font-weight: 900; margin-left: 390px; bottom: 4px">→</h2>
-          </div>
+         
         </div>
-        <div id="com-fourth" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-four fourth"><h3 class="white-font white-border" style="margin-left: 350px; margin-top: 100px">Crude<br>Assays</h3></div>
-          <div class="descr-three fourth" style="margin-left: 7%; margin-top: 0.5%">
+        <div id="com-fourth" style="cursor: ew-resize">
+          <div class="title-vert title-four"><h3 class="white-font white-border black-title">Crude<br>Assays</h3></div>
+          <div class="descr-three descr blue-bg">
             <p>
             Crude Oil Assays are designed to evaluate whole crude oils and various boiling range fractions contained within the crude oil.The information obtained from the assay can be used for detailed engineering and marketing purposes. An assay can be customized to meet specific requirements.
             <br><br>
             A crude oil assay involves a physical distillation of the crude oil to generate specific boiling range fractions ("cuts"). Each of the cuts is analyzed for physical and chemical properties, and basic or detailed information is provided regarding the whole crude properties and the individual cut qualities.
-            </p>
+            </p><br><br><br><br>
           </div>
         </div>
-        <div id="com-fifth" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-fifth fifth"><h3 class="white-font white-border" style="margin-left: 370px; margin-top: 100px">Hydrocarbon<br>Testing</h3></div>
-          <div class="descr-three fifth" style="margin-left: 7%; margin-top: 0.5%">
+        <div id="com-fifth" style="cursor: ew-resize">
+          <div class="title-vert title-fifth"><h3 class="white-font white-border black-title">Hydrocarbon<br>Testing</h3></div>
+          <div class="descr-three descr blue-bg">
             <p>
             Should you need specific testing done, CQI can, through our support affiliations, offer a wide ranging variety of hydrocarbon analyses for crude oils and refined products. 
             <br><br>
             Please contact us at crudequality.com with your specific request(s).
-            <br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
             </p>
           </div>
         </div>
@@ -147,6 +146,7 @@
         <div class="arrows" style="position: fixed; top: 89%; left: 45%; width: 100px">
         </div>
       </div>
+    </div>
     </div>
     <div id="info" class="container-fluid">
       <br/>
@@ -156,6 +156,7 @@
       </div>
     </div>
     <script src="js/three.min.js"></script>
+    <script src="assets/slick/slick.js"></script>
     <script src="js/shaders/SSAOShader.js"></script>
     <script src="js/controls/OrbitControls.js"></script>
     <link href="assets/slick/slick.css" rel="stylesheet">
@@ -168,14 +169,6 @@
       height: 500px;
     }
     </style>
-    <script src="assets/slick/slick.min.js"></script>
-    <script>
-     $('.slick').slick({
-      arrows: false,
-      dots: true,
-      appendDots: $('.arrows')
-     });
-    </script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#nav-icon4').click(function(){
@@ -195,8 +188,23 @@
       });
     });
     </script>
+   <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+     });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {

@@ -9,6 +9,7 @@
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" />
     <link rel="stylesheet" href="css/home.css" />
     <style>
     p {
@@ -58,79 +59,89 @@
       <div class="barba-container">
       <div class="menu" style="display: none">
         <div class="menu-item" style="display: none">
-          <h2 id="to_home" style="top: 15%; left: 45%;"><a class="white-font navg" href="index.html">Home</a></h2>
-          <h2 id="to_about" style="top: 25%; left: 45%;"><a class="white-font navg" href="corporate.html">About Us</a></h2>
-          <h2 id="to_services" style="top: 35%; left: 45%;"><a class="white-font navg no-barba" href="services.html">Services</a></h2>
-          <h2 id="to_projects" style="top: 45%; left: 45%;"><a class="white-font navg no-barba" href="projects.html">Projects</a></h2>
-          <h2 id="to_committee" style="top: 55%; left: 45%;"><a class="white-font navg no-barba" href="committee.html">Committees</a></h2>
-          <h2 id="to_links" style="top: 65%; left: 45%;"><a class="white-font navg no-barba" href="links.html">Links</a></h2>
-          <h2 id="to_contact" style="top: 75%; left: 45%;"><a class="white-font navg" href="contact.html">Contact Us</a></h2>
+          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
           </div>
       </div>
-        <!--<div class="dark-background"></div>-->
-        <h1 class="white-font" style="top: 10%; left: 21%;">Links</h1>
-        <p class="white-font" style="width: 700px; top: 21%; left: 21%; position: fixed;">This link will take you to the <a href="http://www.crudemonitor.ca">crudemonitor.ca</a> site. This site chronicles the quality of Western Canadian market grade and feeder condensate and crudes, and is the ongoing priority for Crude Quality Inc.</p>
-        <div class="slick" style="position: fixed; top: 25%; left: 0%; width: 100vw">
-        <div id="com-first" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 335px; padding-top: 20px; padding-right: 200px;">
-          <h3>Canadian<br>Producer Associations</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://www.capp.ca/">Canadian Association of Petroleum Producers</a><br>
-            <a class="white-font" href="explorersandproducers.ca/">Explorers and Producers Association of Canada</a><br>
-            <a class="white-font" href="http://www.cepa.com/">Canadian Energy Pipeline Association</a><br>
-            <a class="white-font" href="http://www.cga.ca/">Canadian Gas Association</a>
-            </p>
+        <div class="container-fluid padded-top">
+          <div class="container">
+            <h1 class="white-font">Links</h1>
+            <p class="white-font">This link will take you to the <a href="http://www.crudemonitor.ca">crudemonitor.ca</a> site. This site chronicles the quality of Western Canadian market grade and feeder condensate and crudes, and is the ongoing priority for Crude Quality Inc.</p>
+            <br>
           </div>
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 935px; padding-top: 20px; padding-right: 230px;">
-          <h3>Canadian<br>Technical Organizations</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://www.ccqta.com/">Canadian Crude Quality Technical Association</a><br>
-            <a class="white-font" href="http://www.choa.ab.ca/">Canadian Heavy Oil Association</a><br>
-            <a class="white-font" href="http://www.nrc-cnrc.gc.ca/index.html">National Research Council</a><br>
-            <a class="white-font" href="http://www.speca.ca/">Society of Petroleum Engineers, Canadian Section</a><br>
-            <a class="white-font" href="http://www.statcan.gc.ca/">Statistics Canada</a>
-            </p>
+          <div class="slick" >
+          <div id="com-first" style="cursor: ew-resize">
+            <div class="link-text white-font white-border half-size">
+            <h3>Canadian Producer Associations</h3>
+            <p>
+              <a class="white-font" href="http://www.capp.ca/">Canadian Association of Petroleum Producers</a><br>
+              <a class="white-font" href="explorersandproducers.ca/">Explorers and Producers Association of Canada</a><br>
+              <a class="white-font" href="http://www.cepa.com/">Canadian Energy Pipeline Association</a><br>
+              <a class="white-font" href="http://www.cga.ca/">Canadian Gas Association</a>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="link-text white-font white-border half-size">
+            <h3>Canadian Technical Organizations</h3>
+            <p>
+              <a class="white-font" href="http://www.ccqta.com/">Canadian Crude Quality Technical Association</a><br>
+              <a class="white-font" href="http://www.choa.ab.ca/">Canadian Heavy Oil Association</a><br>
+              <a class="white-font" href="http://www.nrc-cnrc.gc.ca/index.html">National Research Council</a><br>
+              <a class="white-font" href="http://www.speca.ca/">Society of Petroleum Engineers, Canadian Section</a><br>
+              <a class="white-font" href="http://www.statcan.gc.ca/">Statistics Canada</a>
+              </p>
+            </div>
+          </div>
+          <div id="com-second" style="cursor: ew-resize">
+            <div class="link-text white-font white-border half-size">
+            <h3>Alberta / Canadian<br>Government Departments</h3>
+            <p>
+              <a class="white-font" href="http://www.aer.ca/">Alberta Energy Regulator</a><br>
+              <a class="white-font" href="http://www.energy.alberta.ca/">Alberta Energy</a><br>
+              <a class="white-font" href="http://www.nrcan.gc.ca/energy/offices-labs/canmet/5715">Canmet Energy</a><br>
+              <a class="white-font" href="http://www.nrcan.gc.ca/">Natural Resources Canada</a>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="link-text white-font white-border half-size">
+            <h3>Canadian Technical Organizations</h3>
+            <p>
+              <a class="white-font" href="http://www.coqa-inc.org/">Crude Oil Quality Association</a><br>
+              <a class="white-font" href="http://www.opportunitycrudes.com/">Opportunity Crudes</a><br>
+              <a class="white-font" href="http://www.perf.org/">Petroleum Environmental Research Forum</a><br>
+              <a class="white-font" href="http://www.refiningonline.com/">Refining Online</a><br>
+              <a class="white-font" href="http://www.spe.org/">Society of Petroleum Engineers</a>
+              </p>
+            </div>
+          </div>
+          <div id="com-third" style="cursor: ew-resize">
+            <div class="link-text white-font white-border half-size"">
+            <h3>Petroleum Industry Pricing Links</h3>
+            <p>
+              <a class="white-font" href="http://octane.nmt.edu/gotech/Main.aspx">Daily Petroleum Prices Reports</a><br>
+              <a class="white-font" href="http://www.p2energysolutions.com/">Petroleum Place (Discovery Place)</a><br>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="link-text white-font white-border half-size"">
+            <h3>US Government Departments</h3>
+            <p>
+              <a class="white-font" href="http://www.api.org/">American Petroleum Institute</a><br>
+              <a class="white-font" href="http://www.osti.gov/">United States Department of Energy<br>Office of Scientific & Technical Information</a><br>
+              </p>
+            </div>
+          </div>
           </div>
         </div>
-        <div id="com-second" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 335px; padding-top: 20px; padding-right: 430px;">
-          <h3>Alberta / Canadian<br>Government Departments</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://www.aer.ca/">Alberta Energy Regulator</a><br>
-            <a class="white-font" href="http://www.energy.alberta.ca/">Alberta Energy</a><br>
-            <a class="white-font" href="http://www.nrcan.gc.ca/energy/offices-labs/canmet/5715">Canmet Energy</a><br>
-            <a class="white-font" href="http://www.nrcan.gc.ca/">Natural Resources Canada</a>
-            </p>
-          </div>
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 1015px; padding-top: 20px; padding-right: 280px;">
-          <h3>Canadian<br>Technical Organizations</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://www.coqa-inc.org/">Crude Oil Quality Association</a><br>
-            <a class="white-font" href="http://www.opportunitycrudes.com/">Opportunity Crudes</a><br>
-            <a class="white-font" href="http://www.perf.org/">Petroleum Environmental Research Forum</a><br>
-            <a class="white-font" href="http://www.refiningonline.com/">Refining Online</a><br>
-            <a class="white-font" href="http://www.spe.org/">Society of Petroleum Engineers</a>
-            </p>
-          </div>
-        </div>
-        <div id="com-third" class="box" class="box" style="cursor: ew-resize">
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 335px; padding-top: 20px; padding-right: 240px;">
-          <h3>Petroleum Industry<br>Pricing Links</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://octane.nmt.edu/gotech/Main.aspx">Daily Petroleum Prices Reports</a><br>
-            <a class="white-font" href="http://www.p2energysolutions.com/">Petroleum Place (Discovery Place)</a><br>
-            </p>
-          </div>
-          <div class="title-vert title-one first white-font white-border" style="margin-top: 100px; height: 300px; margin-left: 905px; padding-top: 20px; padding-right: 230px;">
-          <h3>US Government<br>Departments</h3>
-          <p style="padding-top: 130px;"">
-            <a class="white-font" href="http://www.api.org/">American Petroleum Institute</a><br>
-            <a class="white-font" href="http://www.osti.gov/">United States Department of Energy<br>Office of Scientific & Technical Information</a><br>
-            </p>
-          </div>
-        </div>
-        </div>
-        <div class="arrows" style="position: fixed; top: 81%; left: 45%; width: 100px">
+        <div class="arrows" style="position: fixed; top: 90%; left: 45%; width: 100px">
         </div>
       </div>
     </div>
@@ -155,13 +166,6 @@
     }
     </style>
     <script src="assets/slick/slick.min.js"></script>
-    <script>
-     $('.slick').slick({
-      arrows: false,
-      dots: true,
-      appendDots: $('.arrows')
-     });
-    </script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#nav-icon4').click(function(){
@@ -175,8 +179,36 @@
       })
     });
     </script>
+   <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      slidesToShow: 3,
+      appendDots: $('.arrows'),
+      responsive: [{
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2 
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1 
+        }
+      }]
+     });
+    </script>
     <script type="text/javascript">
     Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
     var BaseTransition = Barba.BaseTransition;
     var FadeTransition = Barba.BaseTransition.extend({
       start: function() {
